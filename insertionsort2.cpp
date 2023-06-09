@@ -10,6 +10,7 @@ void printArr(vector<int> arr){
     for(auto i : arr){
         cout << i << " ";
     }
+    
     cout << endl;    
 }
 
@@ -17,21 +18,21 @@ vector<int> swap(vector<int> arr, int index1, int index2){
     int temp = arr[index2];
     arr[index2] = arr[index1];
     arr[index1] = temp;
+    //printArr(arr);
     return arr;
 }
 
 void insertionSort2(int n, vector<int> arr) {
     printArr(arr);
     for(int i = 0; i < arr.size(); i++){
-        int pivot = arr[i];
-        if(pivot > arr[i+1]){
-            int k = i+1;
-            for(int j = k; j >= 0; j--){
-                if(arr[j]>arr[k])
-                    swap(arr[j],arr[k]);
-            }
+        if(arr[i] > arr[i+1])
+            swap(arr[i], arr[i+1]);
+        for(int j = i; j >= 0 ; j--){
+            if(arr[j+1] > arr[j])
+                swap(arr[j], arr[j+1]);
         }
         printArr(arr);
+        cout << "---------------------" << endl;
     }
 }
 
