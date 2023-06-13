@@ -13,7 +13,22 @@ vector<string> split(const string &);
  * The function accepts INTEGER_ARRAY arr as parameter.
  */
 vector<int> quickSort(vector<int> arr, int size, int pivotIndex) {
-int pivot = arr[pivotIndex];
+	int pivot = arr[0];
+    vector<int> left, right;
+    for(int i = 0; i < arr.size(); i++){
+        if(arr[i] < pivot){
+            left.push_back(arr[i]);
+        }else if(arr[i] > pivot){
+            right.push_back(arr[i]);
+        }
+    }
+    
+    arr.clear();
+    arr.insert(arr.end(), left.begin(), left.end());
+    arr.push_back(pivot);
+    arr.insert(arr.end(), right.begin(), right.end());
+    
+    return arr;
                             
 }
 
