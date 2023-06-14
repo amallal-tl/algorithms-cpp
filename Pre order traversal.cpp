@@ -51,7 +51,9 @@ class Node {
 */
 
     void preOrder(Node *root) {
-
+		cout << root->data << " ";
+        if(root->left!=NULL)preOrder(root->left);
+        if(root->right!=NULL)preOrder(root->right);
     }
 
 }; //End of Solution
