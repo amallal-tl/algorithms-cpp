@@ -8,7 +8,15 @@ using namespace std;
 class Solution {
   public:
     long long int nthFibonacci(long long int n){
-        // code here
+        long long prev2=1;
+        long long prev=1;
+        long long curr;
+        for(long long i=2;i<n;i++){
+            curr=(prev+prev2)%1000000007;
+            prev2=prev%1000000007;
+            prev=curr;
+        }
+        return prev;
     }
 };
 
