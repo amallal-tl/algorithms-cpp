@@ -1,0 +1,1 @@
+int externalVar = 10;

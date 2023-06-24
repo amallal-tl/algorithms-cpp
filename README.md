@@ -1,3 +1,3 @@
 # cpp
 
-Execution command - g++ -o templates.exe templates.cpp && templates.exe
+Execution command - g++ -o a.exe templates.cpp && a.exe
