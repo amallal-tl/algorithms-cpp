@@ -3,8 +3,8 @@
 using namespace std;
 
 struct vec1{
-	int a;
-	string b;
+	int a = 0;
+	string b = "";
 } v1;
 
 int main(){
@@ -15,4 +15,6 @@ int main(){
 	v2.a = 20;
 	v2.b = "Amal2";
 	cout << v2.b << " = " << v2.a << endl;
+	vec1 v[10];
+	vec1* v3 = new vec1();
 }
