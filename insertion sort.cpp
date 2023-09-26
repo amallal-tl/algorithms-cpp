@@ -1,15 +1,22 @@
+#include <iostream>
+#include <vector>
+
 using namespace std;
 
 int main(){
 	vector<int>vec = {5, 1, 6, 4, 9, 8};
 	for(int i = 1; i < vec.size(); i++){
-		if(vec[i-1] > vec[i]){
-			int temp = vec[i];
-			vec[i] = vec[i-1];
-			vec[i-1] = temp;
-			for(int j = i; j > 0; i--)	{
-				
+		for(int j = i; j > 0; j--)	{
+			if(vec[j-1] > vec[j]){
+				int temp = vec[j];
+				vec[j] = vec[j-1];
+				vec[j-1] = temp;					
 			}
 		}
 	}
+	
+	for(auto itr = vec.begin(); itr != vec.end(); itr++){
+		cout << *(itr) << " ";
+	}
+	cout << endl;
 }
