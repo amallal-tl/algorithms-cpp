@@ -1,15 +1,17 @@
+//https://leetcode.com/problems/majority-element/submissions/?envType=study-plan-v2&envId=top-interview-150
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
-        int major = 0, count = 0 ,size = nums.size();
-        std::array<size, int> arr = {0};
+        int count = 0, elt = 0;
         for(int i = 0; i < nums.size(); i++){
-           arr[nums[i]] += 1;
-           count = arr[nums[i]/2;
-           if(count > major)
-            major = count;
+           if(count == 0){ 
+               elt = nums[i];
+           }
+            if(elt == nums[i]){
+                count += 1;
+            } else count -= 1;
         }
         
-        return major;
+        return elt;
     }
 };
