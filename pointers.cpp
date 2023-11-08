@@ -3,7 +3,6 @@
                               Online C++ Compiler.
                Code, Compile, Run and Debug C++ program online.
 Write your code in this editor and press "Run" button to compile and execute it.
-https://www.youtube.com/watch?v=zuegQmMdy8M
 
 *******************************************************************************/
 
@@ -11,34 +10,37 @@ https://www.youtube.com/watch?v=zuegQmMdy8M
 
 using namespace std;
 
-int sumOfElements(int* arr, int size){
-    int sum = 0;
-    for(int i = 0; i < size; i++){
-        sum += arr[i];
-    }
-    return sum;
-}
-
 int main()
 {
-    /*int a = 10;
-    int* p = &a;
-    cout<<"p = " << p << endl;
-    cout<<"a = " << *p << endl;
-    int b = 20;
-    *p = b;
-    cout<<"p = " << p << endl;
-    cout<<"a = " << *p << endl;
-    cout<<"p++ = " << p+1 << endl;
-    *p = *(p)+1;
-    cout<<"*p+1 = " << *p  << endl;
-    *p = *(p)+1;
-    cout<<"*p+1 = " << *p << endl;
-    */
-    int arr[4] = {4, 3, 2, 1};
-    //cout << "Arr[0] = " << *arr << endl;
-    //cout << "Arr[1] = " << *(arr+1) << endl;
-    int size = sizeof(arr)/sizeof(arr[0]);
-    cout << "Sum = " << sumOfElements(arr, size) << endl;
+    int B[2][3] = {{2, 3, 6}, {4, 5, 8}};
+    cout << B << endl;
+    int* pp = *B;
+    cout << pp << endl;
+    cout << &(B[0][0]) << endl;
+    cout << *(B+1)+2 << endl;
+    cout << *(*B+1) << " = " << &B[1][0] << endl;
+    
+    int* p = (int*) malloc(sizeof(int));
+    *p = 10;
+    cout << p << " = " << *p << endl;
+    free(p);
+    p=NULL;
+    cout << p << " = " << *p << endl;
+    int* p1 = (int*) malloc(2 * sizeof(int));
+    *(p1+0) = 10;
+    *(p1+1) = 20;
+    cout << *(p1+0) << ", " << *(p1+1) << endl;
+    free(p);
+    
+    int* ptr1 = new int(10);
+    cout << ptr1 << " = " << *ptr1 << endl;
+    
+    int* ptr2 = new int;
+    *ptr2 = 20;
+    cout << ptr2 << " = " << *ptr2 << endl;
+    
+    int* ptrarr1 = new int[2];
+    delete[] ptrarr1;
+    
     return 0;
 }
