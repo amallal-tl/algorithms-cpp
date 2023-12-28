@@ -13,23 +13,19 @@ vector<string> split(const string &);
  */
 
 void plusMinus(vector<int> arr) {
-    int a[3] = {0};
-    for(int i = 0 ; i < arr.size(); i++){
-        if(arr[i] > 0){
-          a[0]+=1;
-          cout << "pos : "<<arr[i] << " : " << a[0] << endl;
-        } else if(arr[i] < 0){
-            a[1]+=1;
-          cout << "beg : "<<arr[i] << " : " << a[1] << endl;
-        } else if(arr[i] == 0){
-            a[2]+=1;
-          cout << "zer : "<<arr[i] << " : " << a[2] << endl;            
-        }
+    double plus = 0, minus = 0, zero = 0;
+    for(auto itr = arr.begin(); itr != arr.end(); itr++){
+        if(*itr > 0)
+            plus += 1;
+        else if(*itr == 0) zero += 1;
+        else minus += 1;
     }
-    
-    for(int j = 0; j < 3; j++){
-        cout << (float)a[j]/(arr.size())<<endl;
-    }
+    plus /=arr.size();
+    minus /= arr.size();
+    zero /= arr.size();
+    cout << plus << endl;
+    cout << minus  << endl;
+    cout << zero <<endl;
 }
 
 int main()
